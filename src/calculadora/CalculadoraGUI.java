@@ -65,6 +65,14 @@ public class CalculadoraGUI extends JFrame {
         app.setVisible(true);
     }
     private void inicializarComponentes() {
+    JLabel lblNum1 = new JLabel("Numero 1");
+    lblNum1.setBounds(50, 10, 100, 20);
+    add(lblNum1);
+
+    JLabel lblNum2 = new JLabel("Numero 2");
+    lblNum2.setBounds(200, 10, 100, 20);
+    add(lblNum2);
+        
     // Campos de entrada
     campo1 = new JTextField();
     campo1.setBounds(50, 30, 120, 30);
