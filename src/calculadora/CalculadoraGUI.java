@@ -3,6 +3,7 @@ package calculadora;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.table.DefaultTableModel;
 
 public class CalculadoraGUI extends JFrame {
 
@@ -10,6 +11,8 @@ public class CalculadoraGUI extends JFrame {
     private JTextField campo1, campo2;
     private JButton btnSumar, btnRestar, btnMultiplicar, btnDividir;
     private JLabel resultado;
+    private JTable tablaHistorial;
+    private DefaultTableModel modeloTabla;
 
     // Constructor
     public CalculadoraGUI() {
@@ -103,6 +106,13 @@ public class CalculadoraGUI extends JFrame {
     resultado = new JLabel("Resultado:");
     resultado.setBounds(50, 130, 300, 30);
     add(resultado);
+    
+     String[] columnas = {"Número 1", "Operación", "Número 2", "Resultado"};
+        modeloTabla = new DefaultTableModel(columnas, 0);
+        tablaHistorial = new JTable(modeloTabla);
+        JScrollPane scrollPane = new JScrollPane(tablaHistorial);
+        scrollPane.setBounds(50, 170, 300, 120);
+        add(scrollPane);
 
     // Eventos para los botones
     btnSumar.addActionListener(e -> operar('+'));
