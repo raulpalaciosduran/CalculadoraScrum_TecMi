@@ -67,11 +67,22 @@ public class CalculadoraGUI extends JFrame {
 }
 
     // Método main
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         CalculadoraGUI app = new CalculadoraGUI();
         app.setVisible(true);
     }
     private void inicializarComponentes() {
+        try {
+        // Aplicar el Look & Feel "Nimbus" (más moderno y elegante)
+        UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+    } catch (Exception e) {
+        System.out.println("No se pudo aplicar el Look & Feel Nimbus");
+    }
     JLabel lblNum1 = new JLabel("Numero 1");
     lblNum1.setBounds(50, 10, 100, 20);
     add(lblNum1);
