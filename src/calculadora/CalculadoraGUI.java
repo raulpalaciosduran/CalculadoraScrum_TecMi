@@ -111,18 +111,27 @@ public class CalculadoraGUI extends JFrame {
     resultado.setBounds(50, 130, 300, 30);
     add(resultado);
     
-     String[] columnas = {"Número 1", "Operación", "Número 2", "Resultado"};
-        modeloTabla = new DefaultTableModel(columnas, 0);
-        tablaHistorial = new JTable(modeloTabla);
-        JScrollPane scrollPane = new JScrollPane(tablaHistorial);
-        scrollPane.setBounds(50, 170, 300, 120);
-        add(scrollPane);
+    //tabla de historial
+    String[] columnas = {"Número 1", "Operación", "Número 2", "Resultado"};
+    modeloTabla = new DefaultTableModel(columnas, 0);
+    tablaHistorial = new JTable(modeloTabla);
+    JScrollPane scrollPane = new JScrollPane(tablaHistorial);
+    scrollPane.setBounds(50, 170, 300, 120);
+    add(scrollPane);
+    
+        //boton de borrar historial
+    JButton btnLimpiar = new JButton("Limpiar historial");
+    btnLimpiar.setBounds(120, 310, 150, 30);
+    add(btnLimpiar);
 
     // Eventos para los botones
     btnSumar.addActionListener(e -> operar('+'));
     btnRestar.addActionListener(e -> operar('-'));
     btnMultiplicar.addActionListener(e -> operar('*'));
     btnDividir.addActionListener(e -> operar('/'));
+    
+    //borrar historial
+    btnLimpiar.addActionListener(e -> modeloTabla.setRowCount(0));
 }
 
 }
