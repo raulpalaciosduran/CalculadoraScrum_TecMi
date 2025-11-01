@@ -36,14 +36,17 @@ public class CalculadoraGUI extends JFrame {
             case '+':
                 resultadoFinal = num1 + num2;
                 resultado.setText("Resultado: " + resultadoFinal);
+                modeloTabla.addRow(new Object[]{num1, "+", num2, resultadoFinal});
                 break;
             case '-':
                 resultadoFinal = num1 - num2;
                 resultado.setText("Resultado: " + resultadoFinal);
+                modeloTabla.addRow(new Object[]{num1, "-", num2, resultadoFinal});
                 break;
             case '*':
                 resultadoFinal = num1 * num2;
                 resultado.setText("Resultado: " + resultadoFinal);
+                modeloTabla.addRow(new Object[]{num1, "*", num2, resultadoFinal});
                 break;
             case '/':
                 if (num2 == 0) {
@@ -51,6 +54,7 @@ public class CalculadoraGUI extends JFrame {
                 } else {
                     resultadoFinal = num1 / num2;
                     resultado.setText("Resultado: " + resultadoFinal);
+                    modeloTabla.addRow(new Object[]{num1, "/", num2, resultadoFinal});
                 }
                 break;
             default:
